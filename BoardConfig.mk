@@ -59,7 +59,9 @@ TARGET_BOARD_PLATFORM := holi
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := \
+    $(COMMON_PATH)/config.fs \
+    $(COMMON_PATH)/mot_aids.fs
 
 # HIDL
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
