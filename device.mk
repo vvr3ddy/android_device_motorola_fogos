@@ -43,6 +43,7 @@ PRODUCT_COPY_FILES += \
 # Resource Overlays
 PRODUCT_PACKAGES += \
     ProductFrameworksRes \
+    LineageSystemUI
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/fogos/fogos-vendor.mk)
