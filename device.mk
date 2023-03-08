@@ -228,11 +228,12 @@ PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
 # Overlays
-PRODUCT_PACKAGES += \
     CarrierConfigResFogos \
     FrameworksResFogos \
     SettingsProviderResFogos \
+    SettingsResFogos \
     TelephonyResFogos
+
 
 # Partitions - Dynamic
 PRODUCT_BUILD_ODM_IMAGE := true
