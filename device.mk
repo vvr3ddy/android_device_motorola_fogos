@@ -190,5 +190,8 @@ BOARD_VNDK_VERSION := current
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
+# Hardware Motorola
+$(call inherit-product, hardware/motorola/common.mk)
+
 # Proprietary Vendor
 $(call inherit-product, vendor/motorola/fogos/fogos-vendor.mk)
