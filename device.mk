@@ -165,6 +165,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    CarrierConfigResFogos \
     SettingsProviderResFogos
 
 # Partitions - Dynamic
