@@ -167,6 +167,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CarrierConfigResFogos \
     SettingsProviderResFogos
+    TelephonyResFogos
 
 # Partitions - Dynamic
 PRODUCT_BUILD_ODM_IMAGE := true

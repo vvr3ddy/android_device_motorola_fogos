@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "TelephonyResFogos",
+    product_specific: true,
+}
