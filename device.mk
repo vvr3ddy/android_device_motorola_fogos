@@ -47,6 +47,16 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 280dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
+# Additional native libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/libraries/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
+    $(LOCAL_PATH)/configs/libraries/public.libraries-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
+
+# Android Verified Boot
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
+
+
 # API
 BOARD_API_LEVEL := 30
 BOARD_SHIPPING_API_LEVEL := 30
@@ -96,7 +106,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
-TARGET_FS_CONFIG_GEN += $(DEVICE_PATH)/configs/mot_aids.fs
+TARGET_FS_CONFIG_GEN += $(LOCAL_PATH)/configs/mot_aids.fs
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -124,6 +134,11 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.memory.block@1.0.vendor
+
+# Hotword
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hotword/product_privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml \
+    $(LOCAL_PATH)/configs/hotword/hotword-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/hotword-hiddenapi-package-whitelist.xml
 
 # Init
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/init/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default
@@ -207,6 +222,15 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.systemhelper@1.0.vendor
 
+# Telephony
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/telephony/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti
@@ -218,6 +242,7 @@ BOARD_VNDK_VERSION := current
 
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
 
 # Wifi
 PRODUCT_COPY_FILES += \
