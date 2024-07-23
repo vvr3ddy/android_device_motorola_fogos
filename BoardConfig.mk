@@ -6,6 +6,12 @@
 
 DEVICE_PATH := device/motorola/fogos
 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := hawao
+
+# Display
+TARGET_SCREEN_DENSITY := 420
+
 # Kernel
 TARGET_KERNEL_CONFIG := vendor/holi-qgki_defconfig
 
