@@ -14,9 +14,9 @@ fi
 
 set -e
 
-export DEVICE=oscar
+export DEVICE=fogos
 export DEVICE_COMMON=sm6375-common
-export VENDOR=realme
+export VENDOR=motorola
 export VENDOR_COMMON=${VENDOR}
 
 "./../../${VENDOR_COMMON}/${DEVICE_COMMON}/extract-files.sh" "$@"
