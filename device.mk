@@ -11,5 +11,9 @@ $(call inherit-product, device/motorola/sm6375-common/sm6375.mk)
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
 # Inherit proprietary files
 $(call inherit-product-if-exists, vendor/motorola/fogos/fogos-vendor.mk)
