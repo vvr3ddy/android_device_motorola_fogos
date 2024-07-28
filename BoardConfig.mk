@@ -15,5 +15,8 @@ TARGET_BOOTLOADER_BOARD_NAME := fogos
 # Display
 TARGET_SCREEN_DENSITY := 420
 
+# Kernel
+TARGET_KERNEL_CONFIG += vendor/fogos_defconfig
+
 # Inherit from sm6375-common
 include device/motorola/sm6375-common/BoardConfigCommon.mk
