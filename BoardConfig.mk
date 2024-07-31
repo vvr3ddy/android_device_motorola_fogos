@@ -30,5 +30,8 @@ RECOVERY_KERNEL_MODULES := $(BOARD_GENERIC_RAMDISK_KERNEL_MODULES_LOAD)
 TARGET_MODULE_ALIASES += \
     wlan.ko:qca_cld3_wlan.ko
 
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 # Inherit from sm6375-common
 include device/motorola/sm6375-common/BoardConfigCommon.mk
