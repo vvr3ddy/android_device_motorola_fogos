@@ -13,7 +13,7 @@ DEVICE_PATH := device/motorola/fogos
 TARGET_BOOTLOADER_BOARD_NAME := fogos
 
 # Display
-TARGET_SCREEN_DENSITY := 420
+TARGET_SCREEN_DENSITY := 260
 
 # Kernel
 TARGET_KERNEL_CONFIG += vendor/fogos_defconfig
