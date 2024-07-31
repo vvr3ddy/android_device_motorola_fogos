@@ -25,16 +25,17 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+# Define the service to run touch fix script
+service touch_fix /system/bin/sh /touch_fix.sh
+    class main
+    user root
+    group root
+    oneshot
+
+# Trigger the script during the early-init phase
 on early-init
-    insmod /lib/modules/ilitek_v3_mmi.ko
-    insmod /lib/modules/exfat.ko
-    insmod /lib/modules/utags.ko
-    insmod /lib/modules/mmi_sys_temp.ko
-    insmod /lib/modules/mmi_annotate.ko
-    insmod /lib/modules/mmi_info.ko
-    insmod /lib/modules/sensors_class.ko
-    insmod /lib/modules/moto_f_usbnet.ko
-    insmod /lib/modules/watchdogtest.ko
-    insmod /lib/modules/qpnp_adaptive_charge.ko
-    insmod /lib/modules/mmi_relay.ko
-    insmod /lib/modules/mmi-smbcharger-iio.ko
+    start touch_fix
+
+# Trigger the script after the boot phase
+on boot
+    start touch_fix
