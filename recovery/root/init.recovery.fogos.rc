@@ -26,6 +26,7 @@
 #
 
 on early-init
+    insmod /lib/modules/ilitek_v3_mmi.ko
     insmod /lib/modules/exfat.ko
     insmod /lib/modules/utags.ko
     insmod /lib/modules/mmi_sys_temp.ko
@@ -37,4 +38,3 @@ on early-init
     insmod /lib/modules/qpnp_adaptive_charge.ko
     insmod /lib/modules/mmi_relay.ko
     insmod /lib/modules/mmi-smbcharger-iio.ko
-    insmod /lib/modules/ilitek_v3_mmi.ko
