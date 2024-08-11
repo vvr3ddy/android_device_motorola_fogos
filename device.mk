@@ -7,9 +7,6 @@
 # Inherit from sm6375-common
 $(call inherit-product, device/motorola/sm6375-common/holi.mk)
 
-
-TARGET_NOT_USE_VENDOR_BOOT := true
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
