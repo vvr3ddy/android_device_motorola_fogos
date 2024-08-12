@@ -25,6 +25,10 @@ PRODUCT_COPY_FILES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
+# Camera
+PRODUCT_PACKAGES += \
+    libgui_shim_vendor
+
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.device.rc
