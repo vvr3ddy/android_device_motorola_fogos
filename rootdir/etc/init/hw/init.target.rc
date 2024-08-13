@@ -187,3 +187,7 @@ service vendor.qti.hardware.display.allocator /vendor/bin/hw/vendor.qti.hardware
     capabilities SYS_NICE
     onrestart restart surfaceflinger
     task_profiles ProcessCapacityHigh HighPerformance
+
+on property:sys.boot_completed=1
+    stop health-hal-2-1
+    start health-hal-2-1

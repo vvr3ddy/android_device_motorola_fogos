@@ -75,8 +75,8 @@ TARGET_USES_ION := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := \
-    $(COMMON_PATH)/config.fs \
-    $(COMMON_PATH)/mot_aids.fs
+    $(DEVICE_PATH)/config.fs \
+    $(DEVICE_PATH)/mot_aids.fs
 
 # HIDL
 DEVICE_MATRIX_FILE := \
@@ -110,11 +110,6 @@ BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
-
-# Overlays
-PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296

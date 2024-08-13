@@ -197,20 +197,47 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # Init
-define copy_files
-$(foreach f,$(wildcard $(LOCAL_PATH)/$(1)/*),\
-    $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/$(2)/$(notdir $f)))
-endef
-
-# Copy specific files using the function
-$(call copy_files,rootdir/etc/init/hw, etc/init/hw)
-$(call copy_files,rootdir/etc/init, etc/init)
-$(call copy_files,rootdir/bin, bin)
-
+# Copy bin scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default
+    $(LOCAL_PATH)/rootdir/bin/init.blair.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.blair.post_boot.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.class_main.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.class_main.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.crda.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.crda.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.kernel.post_boot-blair.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot-blair.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.kernel.post_boot-holi.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot-holi.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.kernel.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.mmi.boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.mmi.boot.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.mmi.touch.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.mmi.touch.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.oem.fingerprint2.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.oem.fingerprint2.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.oem.fingerprint.overlay.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.oem.fingerprint.overlay.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.oem.hw.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.oem.hw.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qcom.class_core.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.class_core.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qcom.coex.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.coex.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qcom.early_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.early_boot.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qcom.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.post_boot.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qcom.sensors.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.sensors.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qcom.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qti.chg_policy.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.chg_policy.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qti.kernel.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.kernel.sh \
+    $(LOCAL_PATH)/rootdir/bin/init.qti.qcv.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qcv.sh \
+    $(LOCAL_PATH)/rootdir/bin/vendor_modprobe.sh:$(TARGET_COPY_OUT_VENDOR)/bin/vendor_modprobe.sh
 
+# Copy etc/init/hw rc files
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init/hw/init.mmi.chipset.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mmi.chipset.rc \
+    $(LOCAL_PATH)/rootdir/etc/init/hw/init.mmi.overlay.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mmi.overlay.rc \
+    $(LOCAL_PATH)/rootdir/etc/init/hw/init.mmi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mmi.rc \
+    $(LOCAL_PATH)/rootdir/etc/init/hw/init.nfc.sec.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nfc.sec.rc \
+    $(LOCAL_PATH)/rootdir/etc/init/hw/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.rc \
+    $(LOCAL_PATH)/rootdir/etc/init/hw/init.qti.kernel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qti.kernel.rc \
+    $(LOCAL_PATH)/rootdir/etc/init/hw/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc
+
+# Copy etc/init rc files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init/init.qti.qcv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.qcv.rc
+
+# Copy specific files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
     $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
     $(LOCAL_PATH)/rootdir/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
 
@@ -280,6 +307,9 @@ PRODUCT_PACKAGES += \
     libstagefright_softomx_plugin.vendor
 
 # Overlays
+PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
