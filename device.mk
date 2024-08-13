@@ -192,6 +192,10 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# HotwordEnrollement
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+
 # Init
 define copy_files
 $(foreach f,$(wildcard $(LOCAL_PATH)/$(1)/*),\
@@ -468,6 +472,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
-    
+
 PRODUCT_PACKAGES += \
     WifiResCommon
