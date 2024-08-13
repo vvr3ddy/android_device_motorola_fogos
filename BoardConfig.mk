@@ -63,13 +63,15 @@ TARGET_BOARD_PLATFORM := holi
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
+# Display
+TARGET_SCREEN_DENSITY := 280
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := \
     $(COMMON_PATH)/config.fs \
     $(COMMON_PATH)/mot_aids.fs
 
 # HIDL
-
 DEVICE_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml \
     hardware/qcom-caf/common/compatibility_matrix.xml
