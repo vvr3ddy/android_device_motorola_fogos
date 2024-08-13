@@ -84,24 +84,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
 
-# Init
-define copy_files
-$(foreach f,$(wildcard $(LOCAL_PATH)/$(1)/*),\
-    $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/$(2)/$(notdir $f)))
-endef
-
-# Copy specific files using the function
-$(call copy_files,rootdir/etc/init/hw, etc/init/hw)
-$(call copy_files,rootdir/etc/init, etc/init)
-$(call copy_files,rootdir/bin, bin)
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
-    $(LOCAL_PATH)/rootdir/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
-
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
