@@ -31,6 +31,12 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
 
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl-qti \
+    android.hardware.boot@1.1-impl-qti.recovery \
+    android.hardware.boot@1.1-service
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 34
 
