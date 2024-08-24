@@ -232,6 +232,7 @@ PRODUCT_PACKAGES += \
     FrameworksResFogos \
     SettingsProviderResFogos \
     SettingsResFogos \
+    SystemUIFogos \
     TelephonyResFogos
 
 
