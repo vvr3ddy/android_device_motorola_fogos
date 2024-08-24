@@ -234,7 +234,8 @@ PRODUCT_PACKAGES += \
     SettingsProviderResFogos \
     SettingsResFogos \
     SystemUIFogos \
-    TelephonyResFogos
+    TelephonyResFogos \
+    WifiResTargetFogos
 
 
 # Partitions - Dynamic
