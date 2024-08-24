@@ -228,6 +228,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
+# NFC
+TARGET_USES_ST_AIDL_NFC := true
+$(call inherit-product, hardware/st/nfc/nfc_vendor_product.mk)
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/nfc/libnfc-sec-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-sec-nci.conf
+
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.2.vendor \
+    com.android.nfc_extras \
+    libchrome.vendor \
+    NfcNci \
+    SecureElement \
+    Tag
+
 # Overlays
     CarrierConfigResFogos \
     FrameworksResFogosAOSPA \
