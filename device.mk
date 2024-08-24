@@ -16,8 +16,7 @@ AB_OTA_PARTITIONS := \
       vbmeta \
       vbmeta_system \
       vendor \
-      vendor_boot \
-      vendor_dlkm
+      vendor_boot
 
 PRODUCT_PACKAGES += \
     update_engine \
