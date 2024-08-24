@@ -68,6 +68,10 @@ BOARD_KERNEL_CMDLINE := \
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_RAMDISK_USE_LZ4 := true
+KERNEL_DEFCONFIG := fogos_defconfig
+
+# OTA Assert
+TARGET_OTA_ASSERT_DEVICE := fogos
 
 # Partitions - Dynamic
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
