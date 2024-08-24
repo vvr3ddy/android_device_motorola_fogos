@@ -229,6 +229,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
     CarrierConfigResFogos \
+    FrameworksResFogosAOSPA \
     FrameworksResFogos \
     SettingsProviderResFogos \
     SettingsResFogos \
