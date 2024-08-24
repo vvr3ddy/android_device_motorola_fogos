@@ -230,7 +230,8 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_PACKAGES += \
     CarrierConfigResFogos \
-    SettingsProviderResFogos
+    FrameworksResFogos \
+    SettingsProviderResFogos \
     TelephonyResFogos
 
 # Partitions - Dynamic
