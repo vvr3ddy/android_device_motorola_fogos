@@ -66,6 +66,8 @@ BOARD_KERNEL_CMDLINE := \
     lpm_levels.sleep_disabled=1 loop.max_part=7 \
     msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=0
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+KERNEL_CUSTOM_LLVM := true
+KERNEL_FULL_LLVM := true
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_RAMDISK_USE_LZ4 := true
 KERNEL_DEFCONFIG := fogos_defconfig
