@@ -130,7 +130,21 @@ PRODUCT_COPY_FILES += $(DEVICE_PATH)/init/fstab.default:$(TARGET_COPY_OUT_VENDOR
 
 PRODUCT_PACKAGES += \
     charger_fstab.qti \
-    init.qti.early_init.sh
+    fstab.default \
+    init.mmi.boot.sh \
+    init.mmi.charge_only.rc \
+    init.mmi.chipset.rc \
+    init.mmi.overlay.rc \
+    init.mmi.rc \
+    init.mmi.touch.sh \
+    init.oem.fingerprint2.sh \
+    init.oem.hw.sh \
+    init.qcom.sensors.sh \
+    init.qti.chg_policy.sh \
+    init.qti.qcv.rc \
+    init.qti.qcv.sh \
+    init.target.rc \
+    ueventd.fogos.rc
 
 # Kernel
 KERNEL_MODULES_INSTALL := dlkm
