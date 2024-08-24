@@ -17,12 +17,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "fstab.default",
-    src: "fstab.default",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.fogos.perf.rc",
     src: "init.fogos.perf.rc",
     sub_dir: "init",
