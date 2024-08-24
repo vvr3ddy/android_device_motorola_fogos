@@ -199,6 +199,9 @@ PRODUCT_COPY_FILES += \
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := all
 
+# Screen Density
+TARGET_SCREEN_DENSITY := 270
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
