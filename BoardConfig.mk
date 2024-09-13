@@ -13,7 +13,7 @@ DEVICE_PATH := device/motorola/fogos
 TARGET_BOOTLOADER_BOARD_NAME := fogos
 
 # Display
-TARGET_SCREEN_DENSITY := 280
+TARGET_SCREEN_DENSITY := 270
 
 # HIDL
 ODM_MANIFEST_SKUS += b d dn n
@@ -41,7 +41,7 @@ TARGET_MODULE_ALIASES += \
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery
-TARGET_RECOVERY_UI_MARGIN_HEIGHT := 100
+TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # Inherit from sm6375-common
 include device/motorola/sm6375-common/BoardConfigCommon.mk
