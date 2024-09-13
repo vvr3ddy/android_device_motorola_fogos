@@ -35,3 +35,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root/firmware/,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/)
+
+# Get non-open-source specific aspects
+$(call inherit-product, vendor/motorola/fogos/fogos-vendor.mk)
