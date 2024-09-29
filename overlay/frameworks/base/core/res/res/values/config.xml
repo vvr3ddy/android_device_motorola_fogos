@@ -56,12 +56,30 @@
     <integer name="config_autoBrightnessBrighteningLightDebounce">500</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">500</integer>
 
+
+    <!-- An array of arrays of side fingerprint sensor properties relative to each display.
+         Note: this value is temporary and is expected to be queried directly
+         from the HAL in the future. -->
+    <array name="config_sfps_sensor_props" translatable="false">
+        <item>@array/config_sfps_sensor_props_0</item>
+    </array>
+
+    <array name="config_sfps_sensor_props_0" translatable="false">
+        <item>local:4630946747577212033</item> <!--item>displayId</item-->
+        <item>720</item> <!--item>sensorLocationX</item-->
+        <item>600</item> <!--item>sensorLocationY</item-->
+        <item>200</item> <!--item>sensorRadius</item-->
+    </array>
+
+    <!-- Indicates whether device has a power button fingerprint sensor. -->
+    <bool name="config_is_powerbutton_fps" translatable="false">true</bool>
+
     <!-- The default refresh rate for a given device. Change this value to set a higher default
          refresh rate. If the hardware composer on the device supports display modes with a higher
          refresh rate than the default value specified here, the framework may use those higher
          refresh rate modes if an app chooses one by setting preferredDisplayModeId or calling
          setFrameRate().
-         If a non-zero value is set for config_defaultPeakRefreshRate, then
+         If a non-zero value is set for config_defaultPeak, then
          config_defaultRefreshRate may be set to 0, in which case the value set for
          config_defaultPeakRefreshRate will act as the default frame rate. -->
     <integer name="config_defaultRefreshRate">0</integer>
