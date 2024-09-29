@@ -22,7 +22,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Screen brightness used to dim the screen when the user activity
+    <!-- Screen brightness used to dim the screen when the user actiScreenty
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
     <integer name="config_screenBrightnessDim">2</integer>
@@ -48,6 +48,48 @@
          The user is forbidden from setting the brightness below this level. -->
     <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.00784313</item>
 
+
+    <!-- Vibrator pattern for feedback about a long screen/key press -->
+    <array name="config_longPressVibePattern">
+        <item>0</item>
+        <item>60</item>
+    </array>
+
+    <!-- Vibrator pattern for feedback on fp authentication error -->
+    <array name="config_fpErrorVibePattern">
+        <item>0</item>
+        <item>60</item>
+        <item>100</item>
+        <item>60</item>
+    </array>
+
+    <!-- Vibrator pattern for feedback when selecting an hour/minute tick of a Clock -->
+    <array name="config_clockTickVibePattern">
+        <item>0</item>
+        <item>40</item>
+    </array>
+
+    <!-- Vibrator pattern for feedback about touching a virtual key -->
+    <array name="config_virtualKeyVibePattern">
+        <item>0</item>
+        <item>67</item>
+    </array>
+
+    <!-- Vibrator pattern for feedback about booting with safe mode enabled -->
+    <array name="config_safeModeEnabledVibePattern">
+        <item>0</item>
+        <item>0</item>
+        <item>94</item>
+    </array>
+
+    <!-- Vibrator pattern for feedback about hitting a scroll barrier -->
+    <array name="config_scrollBarrierVibePattern">
+        <item>0</item>
+        <item>15</item>
+        <item>30</item>
+        <item>15</item>
+    </array>
+    
     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
          for debouncing the light sensor.  Different constants are used to debounce the light sensor
          when adapting to brighter or darker environments.  This parameter controls how quickly
