@@ -54,6 +54,9 @@ PRODUCT_PACKAGES += \
     ProductFrameworksRes \
     LineageSystemUI
 
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/fogos/fogos-vendor.mk)
-
