@@ -32,7 +32,8 @@ TARGET_SCREEN_WIDTH := 720
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/resource-overlay
 
 # Camera
 PRODUCT_PACKAGES += \
