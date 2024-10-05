@@ -32,8 +32,7 @@ TARGET_SCREEN_WIDTH := 720
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/resource-overlay
+    $(LOCAL_PATH)/overlay
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -53,7 +52,8 @@ PRODUCT_COPY_FILES += \
 # Resource Overlays
 PRODUCT_PACKAGES += \
     ProductFrameworksRes \
-    LineageSystemUI
+    LineageSystemUI \
+    SystemUIRes
 
 # Sensors
 PRODUCT_COPY_FILES += \
